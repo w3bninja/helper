@@ -24,3 +24,13 @@ $.fn.vCenter = function() {
 		$('.vcenter-outer').wrapInner( "<div class='vcenter-inner'></div>");
     });
 };
+
+$.fn.sectionSizing = function() {
+	var set = $(this);
+	set.css("min-height", $(window).height() + "px");
+	$(".max-height").css("max-height", $(window).height() + "px");
+	$(".full-height").css("height", $(window).height() + "px");
+	$(".parent-height").each(function() {
+		$(this).css("height", $(this).parent().height() + "px");
+	});
+};
