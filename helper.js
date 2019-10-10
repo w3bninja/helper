@@ -51,3 +51,21 @@ $.fn.makeItFit = function() {
 		set.fitVids();		
 	});
 };
+
+// SMOOTH SCROLL
+$.fn.scrollTo = function() {
+	if ($(this).length > 0) {
+		$(this).on("click", function(event){
+			 event.preventDefault();
+			 var dest=0;
+			 var destOffset = 200;
+			 if($(this.hash).offset().top > $(document).height()-$(window).height()){
+				  dest=$(document).height()-$(window).height(); //calculate destination place
+			 }else{
+				  dest=$(this.hash).offset().top; //calculate destination place
+			 }
+			 //go to destination
+			 $('html,body').animate({scrollTop:dest-destOffset}, 1000,'swing');
+		 });
+	 }
+};
