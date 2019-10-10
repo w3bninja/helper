@@ -25,6 +25,16 @@ $.fn.vCenter = function() {
     });
 };
 
+$.fn.popper = function() {
+	var set = $(this);
+	set.on('click', function(e){
+		var setPop = $(this).attr("href");
+		e.preventDefault();
+		$('body').toggleClass('pop-open');
+		$('body').find(setPop).toggleClass('active');
+	});
+};
+
 $.fn.sectionSizing = function() {
 	var set = $(this);
 	set.css("min-height", $(window).height() + "px");
