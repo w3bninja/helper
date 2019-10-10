@@ -34,3 +34,10 @@ $.fn.sectionSizing = function() {
 		$(this).css("height", $(this).parent().height() + "px");
 	});
 };
+
+$.fn.makeItFit = function() {
+	$(this).each(function() {
+		var set = $(this);
+		set.fitVids();		
+	});
+};
